@@ -46,7 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="m0S-au-iYw" kind="show" id="e2n-mc-0be"/>
+                        <segue destination="m0S-au-iYw" kind="show" identifier="goToSecondVC" id="e2n-mc-0be"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
