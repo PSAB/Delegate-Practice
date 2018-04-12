@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Delegate_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="Delegate_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                 <state key="normal" title="BEAM">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rz8-kM-KP4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-cd-8v8">
                                 <rect key="frame" x="0.0" y="65" width="375" height="47"/>
@@ -46,6 +49,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="label" destination="8IU-cd-8v8" id="zbb-YN-xzN"/>
+                        <outlet property="textField" destination="igF-PQ-e5p" id="sOf-nU-h3F"/>
                         <segue destination="m0S-au-iYw" kind="show" identifier="goToSecondVC" id="e2n-mc-0be"/>
                     </connections>
                 </viewController>
@@ -53,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-630" y="-7"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="5dh-W2-95j">
             <objects>
-                <viewController id="m0S-au-iYw" sceneMemberID="viewController">
+                <viewController id="m0S-au-iYw" customClass="SecondViewController" customModule="Delegate_Practice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cWo-2f-AXg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,14 +85,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="BEAM">
+                                <state key="normal" title="REBOUND">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reboundButtonPressed:" destination="m0S-au-iYw" eventType="touchUpInside" id="lt6-wP-OTO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0016745112558333986" green="0.58972477791878175" blue="0.0025981566784032913" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="JUP-VR-bAp"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="2XT-ZI-S70" id="kZS-DW-vSc"/>
+                        <outlet property="textField" destination="sYM-oJ-sjl" id="JAR-6R-rH6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upo-0z-biZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

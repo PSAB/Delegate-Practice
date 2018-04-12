@@ -10,11 +10,22 @@ import Foundation
 import UIKit
 
 class SecondViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    var data = ""
     
+    @IBAction func reboundButtonPressed(_ sender: Any) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = data
     }
     
     override func didReceiveMemoryWarning() {

@@ -10,7 +10,26 @@ import Foundation
 import UIKit
 
 class FirstViewController: UIViewController {
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    var data = ""
     
+    
+    
+    
+    
+    
+    @IBAction func sendButtonPressed(_ sender: Any) {
+        print(textField.text!)
+        self.performSegue(withIdentifier: "goToSecondVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSecondVC" {
+            let secondVC = segue.destination as! SecondViewController
+            secondVC.data = textField.text!
+        }
+    }
     
     
     override func viewDidLoad() {
