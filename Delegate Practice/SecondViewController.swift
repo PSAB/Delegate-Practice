@@ -9,23 +9,28 @@
 import Foundation
 import UIKit
 
+protocol SecondVCDelegate {
+    func passDataBack(messageToPassBack: String)
+}
+
 class SecondViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     var data = ""
+    var delegate: SecondVCDelegate?
     
     @IBAction func reboundButtonPressed(_ sender: Any) {
-        
+        self.dismiss(animated: true, completion: nil)
+        delegate?.passDataBack(messageToPassBack: textField.text!)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = data
+        textField.text = ""
     }
     
     override func didReceiveMemoryWarning() {

@@ -9,15 +9,18 @@
 import Foundation
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, SecondVCDelegate {
+    
+    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     var data = ""
     
     
-    
-    
-    
+    func passDataBack(messageToPassBack: String) {
+        data = messageToPassBack
+        label.text = data
+    }
     
     @IBAction func sendButtonPressed(_ sender: Any) {
         print(textField.text!)
@@ -27,6 +30,7 @@ class FirstViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSecondVC" {
             let secondVC = segue.destination as! SecondViewController
+            secondVC.delegate = self
             secondVC.data = textField.text!
         }
     }
@@ -34,6 +38,8 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.text = ""
+       // label.text = data
     }
     
     override func didReceiveMemoryWarning() {
