@@ -31,6 +31,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         label.text = data
         textField.text = ""
+        print("yes!")
     }
     
     override func didReceiveMemoryWarning() {
